@@ -18,11 +18,26 @@ Y = df.label
 Y
 
 with st.expander('Data visualization'):
-st.scatter_chart(
-    data=df,
-    X=X_axis,
-    Y=Y_axis,
-    color='label'
+with st.container():
+    st.write("### Dataset Preview")
+    st.dataframe(df.head())
+
+    # Get numeric columns (skip 'label')
+    numeric_cols = df.columns[1:]
+
+    # Column selection UI
+    x_axis = st.selectbox("Select X-axis column", numeric_cols, index=0)
+    y_axis = st.selectbox("Select Y-axis column", numeric_cols, index=1)
+
+    # Scatter chart
+    st.write(f"### Scatter Chart: {x_axis} vs {y_axis}")
+    st.scatter_chart(
+        data=df,
+        x=x_axis,
+        y=y_axis,
+        color='label'
+    )
+
 )
 
 
