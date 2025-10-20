@@ -18,7 +18,7 @@ Y = df.label
 Y
 
 with st.expander('Data visualization'):
-with st.container():
+
     st.write("### Dataset Preview")
     st.dataframe(df.head())
 
