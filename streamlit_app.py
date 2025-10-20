@@ -17,8 +17,21 @@ st.write('**Y**')
 Y = df.label
 Y
 
-with st.expander('Data visualization'):
-st.scatter_chart(data=df,X ='bill length_mm', Y='body_mass_9', color='species')
+# ✅ Corrected code for your dataset to fix the IndentationError and wrong column names
+
+with st.expander("Data visualization"):
+    # Your dataset does NOT have 'bill_length_mm', 'body_mass_9', or 'species'
+    # So we use valid columns from your uploaded dataset
+    df.columns = df.columns.str.strip().str.lower()
+
+    # Select any two numeric columns from the dataset for plotting
+    numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
+
+    if "label" in df.columns and len(numeric_cols) >= 2:
+        st.scatter_chart(data=df, x=numeric_cols[0], y=numeric_cols[1], color="label")
+    else:
+        st.warning("Not enough numeric data to display scatter chart.")
+
 
 
 
