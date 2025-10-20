@@ -17,7 +17,8 @@ st.write('**Y**')
 Y = df.label
 Y
 with st.expander('Data visualization'):
- st.scatter_chart(data=df, X='bill_length_mm', Y='body_mass_9', color='species')
+ st.scatter_chart(data=df, x='900', y='910.5', color='label')
+
 
 
 
