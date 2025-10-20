@@ -10,12 +10,12 @@ with st.expander('Data'):
  df = pd.read_csv('https://raw.githubusercontent.com/sougataghosh2022-del/dp-machinelearning/refs/heads/master/Updated%20data_01_05_2025%20(1).csv')
  df
  
- st.write('**X**')
- X = df.drop('species',axis=1)
- X
+ st.write('**x**')
+ x = df.drop('species',axis=1)
+ x
 
- st.write('**Y**')
- Y = df.species
+ st.write('**y**')
+ y = df.species
  y
 
 
