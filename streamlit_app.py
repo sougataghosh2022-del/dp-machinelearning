@@ -11,10 +11,10 @@ with st.expander('Data'):
  df
 
 st.write('**X**')
-X = df.drop('species', axis=1)
+X = df.drop('label', axis=1)
 X
 st.write('**Y**')
-Y = df.species
+Y = df.label
 Y
 
 
