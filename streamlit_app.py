@@ -18,8 +18,12 @@ Y = df.label
 Y
 
 with st.expander('Data visualization'):
-st.scatter_chart(data=df,X ='bill length_mm', Y='body_mass_9', color='species')t.")
-
+st.scatter_chart(
+    data=df,
+    x=x_axis,
+    y=y_axis,
+    color='label'
+)
 
 
 
